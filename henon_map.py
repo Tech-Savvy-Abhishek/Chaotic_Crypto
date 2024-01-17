@@ -10,13 +10,13 @@ b = 0.3
 
 def generate_henon_map(x0, y0, n):
     # Initialize an array to store the Henon map
-    henon = np.zeros((n, 2))
+    henon = np.zeros((n+1, 2))
     # Set the initial conditions
     henon[0, 0] = x0
     henon[0, 1] = y0
 
     # Generate the Henon map
-    for i in range(1, n):
+    for i in range(1, n+1):
         # Update x and y using the Henon map equations
         henon[i, 0] = 1 - a * henon[i-1, 0]**2 + henon[i-1, 1]
         henon[i, 1] = b * henon[i-1, 0]

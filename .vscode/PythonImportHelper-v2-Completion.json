@@ -1,0 +1,155 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "list_to_binary",
+        "kind": 2,
+        "importPath": "conversion_utils",
+        "description": "conversion_utils",
+        "peekOfCode": "def list_to_binary(lst):\n    # Initialize an empty string to hold the binary sequence\n    binary_sequence = ''\n    # Iterate over each number in the list\n    for num in lst:\n        # Convert the number to binary and pad it to 8 bits\n        binary_num = format(num, '08b')\n        # Add the binary number to the binary sequence\n        binary_sequence += binary_num\n    # Return the binary sequence",
+        "detail": "conversion_utils",
+        "documentation": {}
+    },
+    {
+        "label": "henon_to_binary",
+        "kind": 2,
+        "importPath": "conversion_utils",
+        "description": "conversion_utils",
+        "peekOfCode": "def henon_to_binary(He1, He2):\n    # Convert the He2 values to a list\n    He = He2.tolist()\n    # Remove the first element from the list\n    He.pop(0)\n    # Iterate over each value in the list\n    for i in range(len(He)):\n        # Scale the value, convert it to an integer, and take the modulus 256\n        He[i] = int(He[i]*10**15) % 256\n    # Convert the list of integers to a binary sequence",
+        "detail": "conversion_utils",
+        "documentation": {}
+    },
+    {
+        "label": "kaplan_yorke_to_binary",
+        "kind": 2,
+        "importPath": "conversion_utils",
+        "description": "conversion_utils",
+        "peekOfCode": "def kaplan_yorke_to_binary(Ka1, Ka2):\n    # Convert the Ka2 values to a list\n    Ka = Ka2.tolist()\n    # Remove the first element from the list\n    Ka.pop(0)\n    # Iterate over each value in the list\n    for i in range(len(Ka)):\n        # Scale the value, convert it to an integer, and take the modulus 256\n        Ka[i] = int(Ka[i]*10**15) % 256\n    # Convert the list of integers to a binary sequence",
+        "detail": "conversion_utils",
+        "documentation": {}
+    },
+    {
+        "label": "tinkerbell_to_binary",
+        "kind": 2,
+        "importPath": "conversion_utils",
+        "description": "conversion_utils",
+        "peekOfCode": "def tinkerbell_to_binary(Tn1, Tn2):\n    # Convert the Tn2 values to a list\n    Tn = Tn2.tolist()\n    # Remove the first element from the list\n    Tn.pop(0)\n    # Iterate over each value in the list\n    for i in range(len(Tn)):\n        # Scale the value, convert it to an integer, and take the modulus 256\n        Tn[i] = int(Tn[i]*10**15) % 256\n        # Take the modulus 16 of the result. This effectively limits the values to the range 0-15.",
+        "detail": "conversion_utils",
+        "documentation": {}
+    },
+    {
+        "label": "generate_henon_map",
+        "kind": 2,
+        "importPath": "henon_map",
+        "description": "henon_map",
+        "peekOfCode": "def generate_henon_map(x0, y0, n):\n    # Initialize an array to store the Henon map\n    henon = np.zeros((n+1, 2))\n    # Set the initial conditions\n    henon[0, 0] = x0\n    henon[0, 1] = y0\n    # Generate the Henon map\n    for i in range(1, n+1):\n        # Update x and y using the Henon map equations\n        henon[i, 0] = 1 - a * henon[i-1, 0]**2 + henon[i-1, 1]",
+        "detail": "henon_map",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "henon_map",
+        "description": "henon_map",
+        "peekOfCode": "a = 1.4\nb = 0.3\n# Function to generate henon map\ndef generate_henon_map(x0, y0, n):\n    # Initialize an array to store the Henon map\n    henon = np.zeros((n+1, 2))\n    # Set the initial conditions\n    henon[0, 0] = x0\n    henon[0, 1] = y0\n    # Generate the Henon map",
+        "detail": "henon_map",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "henon_map",
+        "description": "henon_map",
+        "peekOfCode": "b = 0.3\n# Function to generate henon map\ndef generate_henon_map(x0, y0, n):\n    # Initialize an array to store the Henon map\n    henon = np.zeros((n+1, 2))\n    # Set the initial conditions\n    henon[0, 0] = x0\n    henon[0, 1] = y0\n    # Generate the Henon map\n    for i in range(1, n+1):",
+        "detail": "henon_map",
+        "documentation": {}
+    },
+    {
+        "label": "generate_keplan_yorke_map",
+        "kind": 2,
+        "importPath": "kaplan_yorke_map",
+        "description": "kaplan_yorke_map",
+        "peekOfCode": "def generate_keplan_yorke_map(x0, y0, n):\n    # Initialize an array to store the Kaplan-Yorke map\n    keplan_yorke = np.zeros((n+1, 2))\n    # Set the initial conditions\n    keplan_yorke[0, 0] = x0\n    keplan_yorke[0, 1] = y0\n    # Generate the Kaplan-Yorke map\n    for i in range(1, n+1):\n        # Update x using the Kaplan-Yorke map equation\n        keplan_yorke[i, 0] = a*keplan_yorke[i-1, 0] % 1",
+        "detail": "kaplan_yorke_map",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "kaplan_yorke_map",
+        "description": "kaplan_yorke_map",
+        "peekOfCode": "a = 1.5\nb = 0.8\n# Function to generate Kaplan-Yorke map\ndef generate_keplan_yorke_map(x0, y0, n):\n    # Initialize an array to store the Kaplan-Yorke map\n    keplan_yorke = np.zeros((n+1, 2))\n    # Set the initial conditions\n    keplan_yorke[0, 0] = x0\n    keplan_yorke[0, 1] = y0\n    # Generate the Kaplan-Yorke map",
+        "detail": "kaplan_yorke_map",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "kaplan_yorke_map",
+        "description": "kaplan_yorke_map",
+        "peekOfCode": "b = 0.8\n# Function to generate Kaplan-Yorke map\ndef generate_keplan_yorke_map(x0, y0, n):\n    # Initialize an array to store the Kaplan-Yorke map\n    keplan_yorke = np.zeros((n+1, 2))\n    # Set the initial conditions\n    keplan_yorke[0, 0] = x0\n    keplan_yorke[0, 1] = y0\n    # Generate the Kaplan-Yorke map\n    for i in range(1, n+1):",
+        "detail": "kaplan_yorke_map",
+        "documentation": {}
+    },
+    {
+        "label": "generate_tinkerbell_map",
+        "kind": 2,
+        "importPath": "tinkerbell_map",
+        "description": "tinkerbell_map",
+        "peekOfCode": "def generate_tinkerbell_map(x0, y0, n):\n    # Initialize an array to store the Tinkerbell map\n    tinkerbell = np.zeros((n+1, 2))\n    # Set the initial conditions\n    tinkerbell[0, 0] = x0\n    tinkerbell[0, 1] = y0\n    # Generate the Tinkerbell map\n    for i in range(1, n+1):\n        # Update x and y using the Tinkerbell map equations\n        tinkerbell[i, 0] = tinkerbell[i-1, 0]**2 - tinkerbell[i-1, 1]**2 \\",
+        "detail": "tinkerbell_map",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "tinkerbell_map",
+        "description": "tinkerbell_map",
+        "peekOfCode": "a = 0.9\nb = -0.6013\nc = 2\nd = 0.5\n# Function to generate Tinkerbell map\ndef generate_tinkerbell_map(x0, y0, n):\n    # Initialize an array to store the Tinkerbell map\n    tinkerbell = np.zeros((n+1, 2))\n    # Set the initial conditions\n    tinkerbell[0, 0] = x0",
+        "detail": "tinkerbell_map",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "tinkerbell_map",
+        "description": "tinkerbell_map",
+        "peekOfCode": "b = -0.6013\nc = 2\nd = 0.5\n# Function to generate Tinkerbell map\ndef generate_tinkerbell_map(x0, y0, n):\n    # Initialize an array to store the Tinkerbell map\n    tinkerbell = np.zeros((n+1, 2))\n    # Set the initial conditions\n    tinkerbell[0, 0] = x0\n    tinkerbell[0, 1] = y0",
+        "detail": "tinkerbell_map",
+        "documentation": {}
+    },
+    {
+        "label": "c",
+        "kind": 5,
+        "importPath": "tinkerbell_map",
+        "description": "tinkerbell_map",
+        "peekOfCode": "c = 2\nd = 0.5\n# Function to generate Tinkerbell map\ndef generate_tinkerbell_map(x0, y0, n):\n    # Initialize an array to store the Tinkerbell map\n    tinkerbell = np.zeros((n+1, 2))\n    # Set the initial conditions\n    tinkerbell[0, 0] = x0\n    tinkerbell[0, 1] = y0\n    # Generate the Tinkerbell map",
+        "detail": "tinkerbell_map",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "tinkerbell_map",
+        "description": "tinkerbell_map",
+        "peekOfCode": "d = 0.5\n# Function to generate Tinkerbell map\ndef generate_tinkerbell_map(x0, y0, n):\n    # Initialize an array to store the Tinkerbell map\n    tinkerbell = np.zeros((n+1, 2))\n    # Set the initial conditions\n    tinkerbell[0, 0] = x0\n    tinkerbell[0, 1] = y0\n    # Generate the Tinkerbell map\n    for i in range(1, n+1):",
+        "detail": "tinkerbell_map",
+        "documentation": {}
+    }
+]

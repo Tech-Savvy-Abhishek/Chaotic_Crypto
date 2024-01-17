@@ -11,13 +11,13 @@ b = 0.8
 
 def generate_keplan_yorke_map(x0, y0, n):
     # Initialize an array to store the Kaplan-Yorke map
-    keplan_yorke = np.zeros((n, 2))
+    keplan_yorke = np.zeros((n+1, 2))
     # Set the initial conditions
     keplan_yorke[0, 0] = x0
     keplan_yorke[0, 1] = y0
 
     # Generate the Kaplan-Yorke map
-    for i in range(1, n):
+    for i in range(1, n+1):
         # Update x using the Kaplan-Yorke map equation
         keplan_yorke[i, 0] = a*keplan_yorke[i-1, 0] % 1
         # Update y using the Kaplan-Yorke map equation
