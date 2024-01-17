@@ -46,7 +46,7 @@ def kaplan_yorke_to_binary(Ka1, Ka2):
 
 
 # Function to convert Tinkerbell map values to a binary sequence
-def tinkerbell_to_binary(Tn1, Tn2):
+def tinkerbell_to_integer(Tn1, Tn2):
     # Convert the Tn2 values to a list
     Tn = Tn2.tolist()
     # Remove the first element from the list
