@@ -35,7 +35,7 @@ Chaotic Crypto is a course project focusing on the implementation of a novel cha
 
 To get started with Chaotic Crypto, follow these simple steps:
 
-1. Clone the repository: git clone https://github.com/your-username/Chaotic_Crypto.git
+1. Clone the repository: git clone https://github.com/Tech-Savvy-Abhishek/Chaotic_Crypto.git
 2. Install dependencies: pip install -r requirements.txt
 3. Run the Flask app: python app.py
 4. Access the web app at [http://localhost:5000](http://localhost:5000) in your browser.
