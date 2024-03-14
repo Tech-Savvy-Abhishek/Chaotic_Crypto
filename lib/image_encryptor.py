@@ -2,12 +2,14 @@ import numpy as np
 
 def preprocess_key(key):
     # Sort the key and generate corresponding indices
+   
     D = [i for i in range(len(key))]
     temp = zip(key, D)
     # Sort the key in descending order
     temp_desc = sorted(temp, key=lambda x: x[0])
     # Rearrange the sorted key and indices
     mix = list(zip(*temp_desc))
+   
     temp_desc, D = mix[0][::-1], mix[1][::-1]
     return temp_desc, D
 
