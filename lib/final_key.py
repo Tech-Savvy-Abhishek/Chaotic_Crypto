@@ -10,8 +10,7 @@ def final_key_generator(size, n1, n2, n3, n4, n5, n6):
   final_key = ""
   key = [n1, n2, n3, n4, n5, n6]
   for i in range(n):
-    str1, str2, temp_key = generate_key_sequence(
-        key[0], key[1], key[2], key[3], key[4], key[5])
+    temp_key = generate_key_sequence(key)
     final_key += temp_key
     new_key = []
     for i in range(len(key)):

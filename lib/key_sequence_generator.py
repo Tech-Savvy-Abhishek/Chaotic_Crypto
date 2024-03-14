@@ -60,4 +60,4 @@ def generate_key_sequence(key_float):
             km += (final_mat[i][j])
     final_km = binary_to_int_list(km)
 
-    return str3, final_km
+    return final_km
