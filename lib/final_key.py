@@ -7,7 +7,7 @@ def final_key_generator(size, n1, n2, n3, n4, n5, n6):
   n = int(size / 128)
   if (size % 128):
     n += 1
-  final_key = ""
+  final_key = []
   key = [n1, n2, n3, n4, n5, n6]
   for i in range(n):
     temp_key = generate_key_sequence(key)
