@@ -1,0 +1,175 @@
+<!-- modifying bg-->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Webpage</title>
+        <link rel="stylesheet" href="../static/css/main.css">
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body class="flex flex-col h-screen overflow-x-hidden sm:overflow-hidden">
+
+        <header class="flex justify-between items-center px-10 pt-10 z-30">
+
+            <div class="flex items-center space-x-2">
+                <img src="../static/images/logo_icon.svg" alt="Logo" class="h-14 w-14">
+                <h1 id="main-title" class="text-white text-xl">CHAOTIC CRYPTO</h1>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menuButton"
+                    class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav id="menu"
+                class="hidden md:block w-[20%] sm:w-[13%] lg:w-[10%] fixed right-0 top-0 h-full overflow-auto">
+                <div
+                    class="w-[20%] sm:w-[13%] lg:w-[10%] group navbar-card relative bg-white bg-opacity-20 backdrop-blur-lg rounded-tl-xl rounded-bl-xl overflow-hidden border-2 border-white border-opacity-20 shadow-lg">
+                    <div class="hidden group-hover:block animate-shimmer"></div>
+                    <div class="relative p-6">
+                        <div class="flex-col flex">
+                            <span class=" neon icon home cursor-pointer" data-tooltip="HOME">
+                                <span class="material-symbols-outlined"><a href="/">home</a></span>
+                            </span>
+
+                            <span class="neon icon encrypted cursor-pointer" data-tooltip="ENCRYPT">
+                                <span class="material-symbols-outlined"><a href="#">encrypted</a></span>
+                            </span>
+
+                            <span class="neon icon lock_open_right cursor-pointer" data-tooltip="DECRYPT">
+                                <span class="material-symbols-outlined"><a href="/decryption">lock_open_right</a></span>
+                            </span>
+
+                            <span class="h-[3vh]">
+                            </span>
+
+                            <span class="neon icon download cursor-pointer" data-tooltip="GITHUB">
+                                <span class="material-symbols-outlined"><a
+                                        href="https://github.com/Tech-Savvy-Abhishek/Chaotic_Crypto">code</a></span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button id="closeButton" class="md:hidden absolute top-0 right-0 mt-2 mr-2">
+                    <svg class="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <!-- Navigation items go here -->
+            </nav>
+
+        </header>
+
+        <div class="app-container relative">
+            <div class="circle rounded-full absolute bottom-0 left-0"></div>
+            <div class="circle rounded-full absolute top-0 right-0"></div>
+            <div class="absolute top-16 flex flex-col w-full items-center">
+
+                <main class="flex-grow flex items-center justify-center p-10 flex-col sm:flex-row">
+
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="space-y-4">
+                            <!-- drag and drop area  -->
+                            <!-- modifying drag and drop area -->
+
+                            <div id="drop_zone"
+                                class="border-2 border-white/30 rounded-lg overflow-hidden shadow-lg bg-white/20 backdrop-blur-md p-10 flex flex-col items-center justify-center">
+                                <img id="preview" src="" alt="Preview" style="display: none;" class="h-32 w-32">
+                                <img id="drag-and-drop-illustration" src="../static/images/drag-and-drop.png"
+                                    alt="Drag and Drop" class="h-32 w-32">
+                                <p id="drag-and-drop-guide" class="text-base mt-4">Drag and drop to upload files</p>
+                            </div>
+
+
+                            <div class="flex  space-x-4">
+
+                                <div style="position: relative;">
+                                    <input type="file" id="fileInput" name="file" accept="image/*"
+                                        style="display: none; position: absolute;">
+
+                                    <button class=" text-white rounded-xl px-4 py-2 border-2 outlined-btn"
+                                        onclick="event.preventDefault(); document.getElementById('fileInput').click();">Browse
+                                        files to upload</button>
+                                </div>
+
+
+                                <input type="text" id="numbers" name="numbers" required
+                                    class="border-2 border-gray-300 rounded-lg px-4 py-2 w-64"
+                                    placeholder="Enter 6 numbers each of 16 digits separated by comma">
+
+                                <button id="generateButton"
+                                    class=" text-4xl  hover:cursor-pointer rounded-full ">🎲</button>
+
+                            </div>
+
+                            <!-- input display area -->
+                            <div id="coloredNumbers"
+                                class="mt-4 px-5 rounded-lg overflow-hidden shadow-lg bg-black/25 backdrop-blur-xl text-lg">
+                            </div>
+
+                            <!-- submit form  -->
+
+                            <div class="justify-center sm:justify-start flex space-x-2">
+                                <a href="#" class="btn  mr-3">
+                                    <h1 class="btn-title"><button>ENCRYPT</button></h1>
+                                </a>
+                            </div>
+                    </form>
+            </div>
+
+            </main>
+
+        </div>
+        </div>
+
+
+        <!-- //modifying the scripts  -->
+        <script src="../static/scripts/script.js"></script>
+        <script>
+            // generate random - dice button
+            document.getElementById('generateButton').addEventListener('click', function (e)
+            {
+                e.preventDefault();
+                var numbers = [];
+                for (var i = 0; i < 6; i++)
+                {
+                    var number = '';
+                    // Ensure the first digit is not zero
+                    number += Math.floor(Math.random() * 9) + 1;
+                    for (var j = 1; j < 16; j++)
+                    {
+                        number += Math.floor(Math.random() * 10);
+                    }
+                    numbers.push(number);
+                }
+                document.getElementById('numbers').value = numbers.join(', ');
+                var coloredNumbers = numbers.map(function (number, index)
+                {
+                    return '<span class="number-' + (index + 1) + '">' + number + '</span>';
+                });
+                document.getElementById('coloredNumbers').innerHTML = coloredNumbers.join(', ');
+            });
+
+        </script>
+
+    </body>
+
+</html>
