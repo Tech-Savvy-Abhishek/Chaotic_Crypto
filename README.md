@@ -1,5 +1,6 @@
 # Chaotic Crypto
 
+
 <p align="center">
             <img width="70%" src="logo.svg" alt="Username Logo">
         </p>
@@ -16,6 +17,7 @@ This project is built upon the academic research presented in the paper "Efficie
 - Features
 - Getting Started
 - Usage
+- Walkthrough
 - Implementation Details
 - Web App
 - Contributors
@@ -33,17 +35,64 @@ Chaotic Crypto is a course project focusing on the implementation of a novel cha
 
 ## Getting Started
 
-To get started with Chaotic Crypto, follow these simple steps:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-1. Clone the repository: git clone https://github.com/Tech-Savvy-Abhishek/Chaotic_Crypto.git
-2. Install dependencies: pip install -r requirements.txt
-3. Run the Flask app: python app.py
-4. Access the web app at [http://localhost:5000](http://localhost:5000) in your browser.
+### Prerequisites
+
+- Python 3.8 or higher
+- Node.js and npm
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Tech-Savvy-Abhishek/Chaotic_Crypto.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd Chaotic_Crypto
+    ```
+3. Install Python dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Install JavaScript dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+You will need to run the Flask server and the Tailwind CSS compiler at the same time:
+
+1. Run the Flask server:
+    ```bash
+    flask run
+    ```
+2. In a new terminal, run the Tailwind CSS compiler:
+    ```bash
+    npm run tailwind
+    ```
+
+<p align="center">
+            <img width="95%" src="./how-to-run.gif" alt="Username Logo">
+        </p>
+
+Now, both the Flask server and the Tailwind CSS compiler should be running simultaneously. Open your web browser and navigate to http://localhost:5000 to view the application.
 
 ## Usage
 
 1. Upload a true-color image (24-bit depth) to the web app.
 2. Experiment with encryption and decryption techniques as part of your academic exploration.
+
+## Walkthrough
+
+Below is a brief walkthrough of our application:
+
+<p align="center">
+            <img width="95%" src="./walkthrough.gif" alt="Username Logo">
+        </p>
+
 
 ## Implementation Details
 
