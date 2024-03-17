@@ -21,8 +21,8 @@ def encryption():
     return render_template('encryption.html')
 
 
-@app.route('/upload', methods=['POST'])
-def upload():
+@app.route('/encrypt', methods=['POST'])
+def encrypt():
     numbers = request.form.get('numbers')
     n1, n2, n3, n4, n5, n6 = map(int, numbers.split(','))
     file = request.files['file']

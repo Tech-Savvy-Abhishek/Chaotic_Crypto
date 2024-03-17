@@ -1,11 +1,11 @@
-<!-- modifying bg-->
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Webpage</title>
+        <title>Chaotic Crypto</title>
+        <link rel="icon" href="../static/images/logo_icon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../static/css/main.css">
         <link rel="stylesheet" href="../static/css/styles.css">
         <link rel="stylesheet"
@@ -13,19 +13,19 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-
-
     </head>
 
     <body class="flex flex-col h-screen overflow-x-hidden sm:overflow-hidden">
 
         <header class="flex justify-between items-center px-10 pt-10 z-30">
 
+            <!-- Logo and title  -->
             <div class="flex items-center space-x-2">
                 <img src="../static/images/logo_icon.svg" alt="Logo" class="h-14 w-14">
                 <h1 id="main-title" class="text-white text-xl">CHAOTIC CRYPTO</h1>
             </div>
 
+            <!--side menu button  -->
             <div class="md:hidden">
                 <button id="menuButton"
                     class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white">
@@ -36,6 +36,7 @@
                 </button>
             </div>
 
+            <!-- side menu bar  -->
             <nav id="menu"
                 class="hidden md:block w-[20%] sm:w-[13%] lg:w-[10%] fixed right-0 top-0 h-full overflow-auto">
                 <div
@@ -67,6 +68,7 @@
                     </div>
                 </div>
 
+                <!-- side menu close button  -->
                 <button id="closeButton" class="md:hidden absolute top-0 right-0 mt-2 mr-2">
                     <svg class="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -74,21 +76,24 @@
                         </path>
                     </svg>
                 </button>
-                <!-- Navigation items go here -->
+
             </nav>
 
         </header>
 
         <div class="app-container relative">
+            <!-- animated blur circles in the background -->
             <div class="circle rounded-full absolute bottom-0 left-0"></div>
             <div class="circle rounded-full absolute top-0 right-0"></div>
             <div class="absolute top-16 flex flex-col w-full items-center">
 
                 <main class="flex-grow flex items-center justify-center p-10 flex-col-reverse sm:grid sm:grid-cols-2">
                     <div class="space-y-4 text-white">
+                        <!-- main text  -->
                         <h2 class="text-center sm:text-left text-4xl lg:text-5xl xl:text-6xl">Embrace the <span
                                 class="gradient-text">Future</span> <br />
                             of Image <span class="gradient-text-2">Security</span></h2>
+                        <!-- descriptive text  -->
                         <p class="text-center sm:text-left text-base">Dive into the world of image encryption with
                             Chaotic crypto.
                             <br /> Harnessing the power of 2D chaotic maps and pseudo number generation,
@@ -96,6 +101,7 @@
                             <br />Encrypt with an image and six numbers, decrypt with ease.
                             <br />Step into a new era of digital safety with us.
                         </p>
+                        <!-- navigation buttons  -->
                         <div class="justify-center sm:justify-start flex space-x-2">
                             <a href="/encryption" class="btn mt-3 mr-3">
                                 <h1 class="btn-title">ENCRYPT</h1>
@@ -104,17 +110,15 @@
                                 <h1 class="btn-title">DECRYPT</h1>
                             </a>
                         </div>
+
                     </div>
+                    <!-- illustration  -->
                     <img src="../static/images/tech.png" alt="Your Image" class="h-60 md:h-72 lg:h-[28rem] ml-10">
 
                 </main>
 
-
-
             </div>
         </div>
-
-
 
         <script src="../static/scripts/script.js"></script>
 
