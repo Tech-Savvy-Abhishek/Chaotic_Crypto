@@ -32,13 +32,31 @@ document.getElementById('drop_zone').addEventListener('dragover', function (even
     event.dataTransfer.dropEffect = 'copy';
 });
 
+
 document.getElementById('drop_zone').addEventListener('drop', function (event)
 {
     event.stopPropagation();
     event.preventDefault();
-    var file = event.dataTransfer.files[0];
+    var originalFile = event.dataTransfer.files[0];
+
+    // Read the original file as a Blob object
+    var blob = new Blob([originalFile], { type: originalFile.type });
+
+    // Create a new File object with the correct MIME type
+    var file = new File([blob], originalFile.name, { type: originalFile.type });
+
     previewFile(file);
+
+    // Create a new (empty) FileList object
+    var fileList = new DataTransfer();
+
+    // Add the file to the FileList object
+    fileList.items.add(file);
+
+    // Assign the FileList to the 'file' input field
+    document.getElementById('fileInput').files = fileList.files;
 });
+
 
 function previewFile(file)
 {
