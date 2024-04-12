@@ -1,6 +1,4 @@
-import cv2
 import numpy as np
-
 from lib.image_encryptor import preprocess_key
 from lib.image_processor import convert_bgr_to_3channel, convert_to_1d_BGR
 

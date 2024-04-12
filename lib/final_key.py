@@ -1,6 +1,6 @@
 
 from lib.key_sequence_generator import generate_key_sequence
-from lib.utilities import binary_str_to_integers
+
 
 
 def final_key_generator(size, n1, n2, n3, n4, n5, n6):

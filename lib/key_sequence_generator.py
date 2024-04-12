@@ -1,5 +1,4 @@
 from hashlib import sha256
-
 from lib.conversion_utils import henon_to_binary, kaplan_yorke_to_binary, tinkerbell_to_integer
 from lib.henon_map import generate_henon_map
 from lib.kaplan_yorke_map import generate_keplan_yorke_map
